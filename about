@@ -1,0 +1,70 @@
+/* 
+// Metacrafters - Beginning Javascript
+//
+// This is a javascript playground for testing your javascript code!
+// When you are ready to test, simply right click and select "Run Code"
+// to see the result print below. If you have more then one snippet of code,
+// you can highlight the code you want to test, and then right click and select "Run Code"
+*/
+
+// Enter your code below this line
+
+
+
+//Code Example 
+for (var i=1; i<=5; i++) {
+    console.log.apply(i); 
+}
+
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+const SVTs = []
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT (_Name, _Age, _Birthday, _SchoolGrade, _FaveGrp, _introduction) {
+const SVT = {
+    "Name" : _Name,
+    "Age" : _Age,
+    "Birthday" : _Birthday,
+    "School" : _SchoolGrade,
+    "Artist" : _FaveGrp,
+    "About" : _introduction
+ }
+ SVTs.push(SVT); 
+ console.log("Information About: " + _Name);
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+for (let i = 0; i< SVTs.length; i++){
+    console.log("\nName : " + SVTs[i].Name);
+    console.log("Age : " + SVTs[i].Age);
+    console.log("Birthday : " + SVTs[i].Birthday);
+    console.log("School & Grade : " + SVTs[i].School);
+    console.log("Favorite Artist : " + SVTs[i].Artist);
+    console.log("\nThoughts : " + SVTs[i].About);
+    }
+}
+
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+console.log(SVTs.length);
+}
+
+// call your functions below this line
+mintNFT ("Andrea Lorraine", "17", "May 08, 2005", "\nApec Schools - NF | Grade 12 - STEM", "Seventeen - KPOP Boy Group", " \n Holla! I'm Andrea but everyone knows me as Andeng. \n This is my first time coding so I am not familiar with these. \n I'm glad to be able to experience coding even if its a little bit off. \n I am really willing and excited to learn more.");
+listNFTs();
+getTotalSupply();
